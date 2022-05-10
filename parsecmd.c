@@ -7,6 +7,9 @@ void parsecmd(stack_t **stack, unsigned int lineNumber, char *lineToParse)
 								{"pall", pall},
 								{"pint", pint},
 								{"pop", pop},
+								{"add", add},
+								{"swap", swap},
+								{"nop", nop},
 								{NULL, NULL}};
 
 	splitLine = split_str(lineToParse, "\t\n ");

@@ -41,9 +41,12 @@ typedef struct instruction_s
 int data;
 void parsecmd(stack_t **stack, unsigned int lineNumber, char *lineToParse);
 void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
 char **split_str(char *input, char *delimiter);
 
 #endif
