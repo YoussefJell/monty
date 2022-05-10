@@ -1,17 +1,19 @@
 #include "monty.h"
 void pall(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tail = *stack;
+	stack_t *tail;
+
+	(void)line_number;
+
+	if (*stack)
+		tail = *stack;
+	else
+		return;
 
 	if ((*stack)->next)
-	{
 		tail = tail->next;
-	}
-	if (!tail)
-	{
-		printf("L%d: can't pall, stack is empty\n", line_number);
-	}
-	else
+
+	if (tail)
 	{
 		while (tail != NULL)
 		{

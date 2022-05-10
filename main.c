@@ -26,16 +26,13 @@ int main(int argc, char **argv)
 
 	if (!fD)
 	{
-		fprintf(stderr, "Error: Can't open file '%s'\n", FILENAME);
+		fprintf(stderr, "Error: Can't open file %s\n", FILENAME);
 		return (EXIT_FAILURE);
 	}
 	line_size = getline(&line_buf, &line_buf_size, fD);
 	while (line_size >= 0)
 	{
 		line_count++;
-
-		/*printf("line[%06d]: chars=%06ld, buf size=%06lu, contents: %s", line_count,
-			   line_size, line_buf_size, line_buf);*/
 		parsecmd(&my_stack, line_count, line_buf);
 		line_size = getline(&line_buf, &line_buf_size, fD);
 	}
