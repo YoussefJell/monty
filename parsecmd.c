@@ -15,6 +15,8 @@ void parsecmd(stack_t **stack, unsigned int lineNumber, char *lineToParse)
 	}
 	while (instruct[i].opcode != NULL)
 	{
+		if (!splitLine[0])
+			break;
 		if (strcmp(splitLine[0], instruct[i].opcode) == 0)
 		{
 			instruct[i].f(stack, lineNumber);
