@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * push - adds node at end
  * @head: head of list
@@ -17,7 +17,7 @@ void push(stack_t **stack, unsigned int line_number)
 	if (!stack || !*stack)
 	{
 		newNode->n = data;
-		newNode->next = *stack;
+		newNode->next = NULL;
 		newNode->prev = NULL;
 		*stack = newNode;
 	}

@@ -1,13 +1,14 @@
-#include "main.h"
+#include "monty.h"
 void parsecmd(stack_t **stack, unsigned int lineNumber, char *lineToParse)
 {
 	int i = 0;
 	char **splitLine;
-	instruction_t instruct[] = {{"pall", pall},
-								{"push", push},
+	instruction_t instruct[] = {{"push", push},
+								{"pall", pall},
+								{"pint", pint},
 								{NULL, NULL}};
 
-	splitLine = split_str(lineToParse, " ");
+	splitLine = split_str(lineToParse, "\t\n ");
 	if (splitLine[1])
 	{
 		data = atoi(splitLine[1]);

@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * split_str - splits string into array of elements for execution
  * @input: string input from read_line
