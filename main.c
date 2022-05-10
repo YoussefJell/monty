@@ -9,9 +9,9 @@
 int main(int argc, char **argv)
 {
 	char *line_buf = NULL;
-	size_t line_buf_size = 0;
+	size_t line_buf_size = 1;
 	int line_count = 0;
-	ssize_t line_size;
+	ssize_t line_size = 1;
 	FILE *fD;
 	char *FILENAME = NULL;
 	stack_t *my_stack = NULL;

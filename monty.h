@@ -1,5 +1,7 @@
 #ifndef HEADER_FILE
 #define HEADER_FILE
+#define _GNU_SOURCE
+
 #include <ctype.h>
 #include <fcntl.h>
 #include <sys/types.h>
