@@ -34,5 +34,6 @@ typedef struct instruction_s
 } instruction_t;
 
 void parsecmd(int lineNumber, char *lineToParse);
+stack_t *push(stack_t **head, int n);
 
 #endif
