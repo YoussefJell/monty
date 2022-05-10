@@ -1,34 +1,37 @@
 #include "main.h"
-
-
 /**
  * push - adds node at end
  * @head: head of list
  * @n: new data
  * Return: Always EXIT_SUCCESS.
  */
-stack_t *push(stack_t **head, int n)
+void push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *new_node = malloc(sizeof(stack_t));
-	stack_t *last = *head;
+	stack_t *ptr;
+	stack_t *newNode = malloc(sizeof(stack_t));
 
-	if (new_node == NULL)
-		return (NULL);
-	new_node->n = n;
-	new_node->next = NULL;
-
-	if ((*head) == NULL)
+	if (isdigit(data) != 0)
 	{
-		new_node->prev = NULL;
-		(*head) = new_node;
-		return (new_node);
+		printf("L%d: usage: push integer", line_number);
+		exit(EXIT_FAILURE);
 	}
-
-	while (last->next != NULL)
-		last = last->next;
-	last->next = new_node;
-	new_node->prev = last;
-
-	return (new_node);
-
+	printf("%d\n", data);
+	if (!stack || !*stack)
+	{
+		newNode->n = data;
+		newNode->next = *stack;
+		newNode->prev = NULL;
+		*stack = newNode;
+	}
+	else
+	{
+		while ((*stack)->next != NULL)
+		{
+			ptr = ptr->next;
+		}
+		newNode->n = data;
+		newNode->next = NULL;
+		newNode->prev = *stack;
+		(*stack)->next = newNode;
+	}
 }

@@ -14,6 +14,7 @@ int main(int argc, char **argv)
 	ssize_t line_size;
 	FILE *fp;
 	char *FILENAME = NULL;
+	stack_t *my_stack = NULL;
 
 	if (argc != 2)
 	{
@@ -34,7 +35,7 @@ int main(int argc, char **argv)
 
 		/*printf("line[%06d]: chars=%06ld, buf size=%06lu, contents: %s", line_count,
 			   line_size, line_buf_size, line_buf);*/
-		parsecmd(line_count, line_buf);
+		parsecmd(line_count, line_buf, &my_stack);
 		line_size = getline(&line_buf, &line_buf_size, fp);
 	}
 	free(line_buf);
