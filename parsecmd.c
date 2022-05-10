@@ -6,6 +6,7 @@ void parsecmd(stack_t **stack, unsigned int lineNumber, char *lineToParse)
 	instruction_t instruct[] = {{"push", push},
 								{"pall", pall},
 								{"pint", pint},
+								{"pop", pop},
 								{NULL, NULL}};
 
 	splitLine = split_str(lineToParse, "\t\n ");

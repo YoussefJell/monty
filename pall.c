@@ -10,9 +10,6 @@ void pall(stack_t **stack, unsigned int line_number)
 	else
 		return;
 
-	if ((*stack)->next)
-		tail = tail->next;
-
 	if (tail)
 	{
 		while (tail != NULL)

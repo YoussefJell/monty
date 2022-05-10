@@ -11,7 +11,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (isdigit(data) != 0)
 	{
-		printf("L%d: usage: push integer", line_number);
+		fprintf(stderr, "L%d: usage: push integer", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if (!stack || !*stack)
@@ -31,5 +31,10 @@ void push(stack_t **stack, unsigned int line_number)
 		newNode->next = NULL;
 		newNode->prev = *stack;
 		(*stack)->next = newNode;
+	}
+
+	while ((*stack)->next != NULL)
+	{
+		*stack = (*stack)->next;
 	}
 }
