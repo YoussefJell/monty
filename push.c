@@ -20,7 +20,6 @@ void push(stack_t **stack, unsigned int line_number)
 		newNode->next = *stack;
 		newNode->prev = NULL;
 		*stack = newNode;
-		printf("%d\n", (*stack)->n);
 	}
 	else
 	{
@@ -32,6 +31,5 @@ void push(stack_t **stack, unsigned int line_number)
 		newNode->next = NULL;
 		newNode->prev = *stack;
 		(*stack)->next = newNode;
-		printf("%d\n", (*stack)->next->n);
 	}
 }
