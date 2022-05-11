@@ -1,9 +1,10 @@
 #include "monty.h"
 /**
- * push - adds node at end
- * @head: head of list
- * @n: new data
- * Return: Always EXIT_SUCCESS.
+ * push - adds element on top of the stack
+ * @stack: stack of file lines
+ * @line_number: number of file lines
+ *
+ * Return: void
  */
 void push(stack_t **stack, unsigned int line_number)
 {
