@@ -44,6 +44,7 @@ void parsecmd(stack_t **stack, unsigned int lineNumber, char *lineToParse);
 void pop(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);

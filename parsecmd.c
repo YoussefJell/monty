@@ -1,7 +1,7 @@
 #include "monty.h"
 #include <ctype.h>
 /**
- * parsecmd - parsing file lines into function & args
+ * parsecmd - parsing file lines into function & args and executes
  * @stack: doubly linked list
  * @lineNumber: number of file lines
  * @lineToParse: file line
@@ -23,14 +23,15 @@ void parsecmd(stack_t **stack, unsigned int lineNumber, char *lineToParse)
 								{"sub", sub},
 								{"mul", mul},
 								{"mod", mod},
+								{"pchar", pchar},
 								{NULL, NULL}};
 
 	splitLine = split_str(lineToParse, "\t\n ");
 
 	if (splitLine[1])
-	{
 		data = atoi(splitLine[1]);
-	}
+	if (strncmp(splitLine[0], "#", 1) == 0)
+		return;
 	while (instruct[i].opcode != NULL)
 	{
 		if (!splitLine[0])
