@@ -1,4 +1,12 @@
 #include "monty.h"
+/**
+ * parsecmd - parsing file lines into function & args
+ * @stack: doubly linked list
+ * @lineNumber: number of file lines
+ * @lineToParse: file line
+ *
+ * Returns: void
+ */
 void parsecmd(stack_t **stack, unsigned int lineNumber, char *lineToParse)
 {
 	int i = 0;
@@ -13,10 +21,12 @@ void parsecmd(stack_t **stack, unsigned int lineNumber, char *lineToParse)
 								{NULL, NULL}};
 
 	splitLine = split_str(lineToParse, "\t\n ");
-	if (splitLine[1])
-	{
+
+	if (splitLine[1] && isdigit(splitLine[1]) == 0)
 		data = atoi(splitLine[1]);
-	}
+	else
+		fprintf(stderr, "L%d: usage: push integer \n", lineNumber);
+
 	while (instruct[i].opcode != NULL)
 	{
 		if (!splitLine[0])
