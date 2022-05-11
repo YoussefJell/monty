@@ -55,6 +55,7 @@ void nop(stack_t **stack, unsigned int line_number);
 void divis(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
 char **split_str(char *input, char *delimiter);
+void free_stack(stack_t *head);
 bool isNumber(char *s);
 
 #endif
