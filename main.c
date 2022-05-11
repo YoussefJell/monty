@@ -36,7 +36,6 @@ int main(int argc, char **argv)
 		parsecmd(&my_stack, line_count, line_buf);
 		line_size = getline(&line_buf, &line_buf_size, fD);
 	}
-	free_stack(my_stack);
 	free(line_buf);
 	line_buf = NULL;
 	fclose(fD);
