@@ -19,16 +19,17 @@ void parsecmd(stack_t **stack, unsigned int lineNumber, char *lineToParse)
 								{"add", add},
 								{"swap", swap},
 								{"nop", nop},
+								{"div", divis},
+								{"sub", sub},
+								{"mul", mul},
+								{"mod", mod},
 								{NULL, NULL}};
 
 	splitLine = split_str(lineToParse, "\t\n ");
 
-	if (splitLine[1] && isNumber(splitLine[1]) == true)
-		data = atoi(splitLine[1]);
-	else
+	if (splitLine[1])
 	{
-		fprintf(stderr, "L%d: usage: push integer \n", lineNumber);
-		exit(EXIT_FAILURE);
+		data = atoi(splitLine[1]);
 	}
 	while (instruct[i].opcode != NULL)
 	{
