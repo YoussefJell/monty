@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <ctype.h>
 /**
  * parsecmd - parsing file lines into function & args
  * @stack: doubly linked list
@@ -22,11 +23,13 @@ void parsecmd(stack_t **stack, unsigned int lineNumber, char *lineToParse)
 
 	splitLine = split_str(lineToParse, "\t\n ");
 
-	if (splitLine[1] && isdigit(splitLine[1]) == 0)
+	if (splitLine[1] && isNumber(splitLine[1]) == true)
 		data = atoi(splitLine[1]);
 	else
+	{
 		fprintf(stderr, "L%d: usage: push integer \n", lineNumber);
-
+		exit(EXIT_FAILURE);
+	}
 	while (instruct[i].opcode != NULL)
 	{
 		if (!splitLine[0])
