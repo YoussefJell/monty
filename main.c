@@ -37,6 +37,7 @@ int main(int argc, char **argv)
 		line_size = getline(&line_buf, &line_buf_size, fD);
 	}
 	free(line_buf);
+	free_stack(&my_stack);
 	line_buf = NULL;
 	fclose(fD);
 	return (EXIT_SUCCESS);

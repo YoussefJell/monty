@@ -10,11 +10,8 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *newNode = malloc(sizeof(stack_t));
 
-	if (isdigit(data) != 0)
-	{
-		fprintf(stderr, "L%d: usage: push integer", line_number);
-		exit(EXIT_FAILURE);
-	}
+	(void)line_number;
+
 	if (!stack || !*stack)
 	{
 		newNode->n = data;
