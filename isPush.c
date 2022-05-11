@@ -1,4 +1,11 @@
 #include "monty.h"
+/**
+ * isPush - checks if elem is pushable
+ *
+ * @pushCMD: command to check
+ * @pushNUM: data of command to check
+ * @lineNumber: line number
+ */
 void isPush(char *pushCMD, char *pushNUM, unsigned int lineNumber)
 {
 	if (strcmp(pushCMD, "push") == 0)
