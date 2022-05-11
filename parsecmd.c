@@ -27,9 +27,8 @@ void parsecmd(stack_t **stack, unsigned int lineNumber, char *lineToParse)
 								{NULL, NULL}};
 
 	splitLine = split_str(lineToParse, "\t\n ");
-
-	isPush(splitLine[0], splitLine[1], lineNumber);
-
+	if (splitLine[0])
+		isPush(splitLine[0], splitLine[1], lineNumber);
 	if (strncmp(splitLine[0], "#", 1) == 0)
 		return;
 	while (instruct[i].opcode != NULL)
