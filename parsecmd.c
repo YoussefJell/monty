@@ -30,7 +30,7 @@ void parsecmd(stack_t **stack, unsigned int lineNumber, char *lineToParse)
 
 	if (splitLine[1])
 		data = atoi(splitLine[1]);
-	if (strncmp(splitLine[0], "#", 1) == 0)
+	if (splitLine[0] && strncmp(splitLine[0], "#", 1) == 0)
 		return;
 	while (instruct[i].opcode != NULL)
 	{
