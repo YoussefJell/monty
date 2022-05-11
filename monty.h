@@ -41,6 +41,7 @@ typedef struct instruction_s
 } instruction_t;
 int data;
 void parsecmd(stack_t **stack, unsigned int lineNumber, char *lineToParse);
+void isPush(char *pushCMD, char *pushNUM, unsigned int lineNumber);
 void pop(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
